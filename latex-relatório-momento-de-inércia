@@ -1,0 +1,294 @@
+\documentclass{article}
+\usepackage[portuguese]{babel}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{gensymb}
+\usepackage{siunitx}
+
+
+\title{Determinação Do Momento De Inércia Utilizando Um Método Oscilatório}
+\author{João Guilherme Paiva Bezerra de Melo}
+\date{Maio 2023, Universidade do Porto}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    Neste trabalho foi possível determinar o momento de inércia para massas constantes variado apenas a distribuição dela e o eixo de rotação. Foi possível também testa o teorema de Steiner. Foram estudadas condições que aumentaram o erro associado ao experimento , ressaltando as principais causas e fatores. Por fim , foram calculados e comparados com os valores teóricos o momento de inércia de outros dois sólidos rígidos .Foi concluído que existe uma gama experimental mais eficiente para realizar o experimento.
+\end{abstract}
+
+\section{Introdução}
+Com o objetivo de calcular o momento de inércia de algumasconfigurações de massas e verificar o teorema de Steiner , E.q \ref{eq1.1}, foi utilizada a montagem experimental da figura 1, a qual será mais bem explicada no capitulo 2.1. A função do esquema é utilizar a frequência oscilatória de uma mola para determinar o momento em diferentes configurações.
+Para ser possível  efetuar esse cálculo é preciso relacionar as duas grandezas mencionadas.
+
+\begin{equation}
+  I_p = I_s + M_d2 \label{eq1.1}
+\end{equation}
+
+\begin{itemize}
+    
+\item [\textbullet] $I_p$ = momento de inércia em relação ao eixo paralelo ao de simetria.
+
+\item [\textbullet]  $I_s$ = momento de inércia em relação ao eixo de simetria.
+\end{itemize}
+
+primeiro tem-se que considerar uma distribuição de $N$ massas $m_i$ distribuídas ao redor de um referencial OO' (eixo fixo) a distâncias $r_i$.Assumindo essa configuração e com ajuda da E.q\ref{eq1.3}, conseguimos definir momento de inércia como E.q\ref{eq1.2}.
+
+\begin{equation}
+   I_{oo'} = \sum_{i} m_i r_i^2\label{eq1.2}
+\end{equation}
+
+\begin{equation}
+  \vec{o} = I_{oo'} \omega\label{eq1.3}
+\end{equation}
+
+Generalizando a equação \ref{eq1.2} para distribuições continuas de massas temos E.q \ref{eq1.4}.  
+
+\begin{equation}
+  I_{oo'} = \iiint m_i r_i^2 \, dv\label{eq1.4}
+\end{equation}
+
+Mais um vez com ajuda da E.q \ref{eq1.3} podemos definir a equação do movimento da partícula como E.q \ref{eq1.5} assumindo que o referencial OO' é o eixo principal de rotação do corpo. Considerando $\Vec{M_o}$ como o momento angular de todas as forças atuantes no corpo e que $\Vec{M_o}$ é paralela a OO'.
+
+\begin{equation}
+    \vec{M_o} = \frac{d\vec{L_o}}{dt} = I_{oo'} \frac{d\vec{\omega}}{dt}\label{eq1.5}  
+\end{equation}
+
+Como o momento é aplicado sobre uma mola pode-se concluir a E.q \ref{eq1.6} uma vez que agora $\Vec{M_o}$ é um momento restaurador. sabendo disso pode-se resolver a equação diferencial \ref{eq1.5} comparando com a do movimento harmónico simples , E.q \ref{eq1.7}, chegando na E.q \ref{eq1.8}.É válido destacar que D é uma constante que depende unicamente das características do esquema montado principalmente da mola.
+
+\begin{equation}
+    M_o = -D\theta \label{eq1.6}
+\end{equation}
+
+\begin{itemize}
+ \item [\textbullet]onde $\theta$ é o ângulo de deslocamento.   
+\end{itemize}
+
+\begin{equation}
+    \theta(t) = \theta_{\text{max}} \cos(\Omega t + \varphi)\label{eq1.7}  
+\end{equation}
+
+\begin{itemize}
+\item [\textbullet] $\Omega$ = frequência angular.
+\item[\textbullet] $\varphi$ = uma constante que representa a diferença de fase.
+\end{itemize}
+
+\begin{equation}
+    T^2 = \frac{4}{\pi^2}\frac{I_{oo'}}{D} \label{eq1.8} 
+\end{equation}
+
+\section{Experiência}
+
+\subsection{Método experimental}
+\subsubsection{Esquema experimental}
+
+Como mostrado na montagem a baixo ,fig.\ref{fig1},tem-se um suporte contendo uma barra de metal que nela ligada uma mola que ,quando desviada de sua posição de origem, gera um momento torsor com as características mencionada na introdução.Para determinar o período de oscilação da mola foi utilizado um \textit{fotogate} da marca PASCO o qual está ligado a um contador de tempo calibrado para registar o período de uma oscilação , módulo "pendule".Essa montagem foi feita para simular as condições especificadas na introdução, mas para isso tem-se que fazer algumas considerações e as consequências serão explicadas no tópico de análise.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics{esquema.png}
+    \caption{Protocolo T5A UP}
+    \label{fig1}
+\end{figure}
+
+\begin{itemize}
+    \item[\textbullet] 1 = Base de suporte com mola associada.
+    \item[\textbullet] 2 = Base para cilindros.
+    \item[\textbullet] 3 = \textit{Fotogate} ligado a um contador de tempo {marca : PASCO}.
+    \item[\textbullet] 4 = Barra com massas $m_1$ $m_2$.
+\end{itemize}
+
+\subsubsection{Coleta de dados para determinação de D}
+
+Para fazer a determinação de D é preciso calcula o momento de inércia na posição de equilíbrio para diferentes distâncias $d_t$ , pois , com esses valores e com auxílio da Eq.\ref{eq1.9} que vem da Eq.\ref{eq1.8} podemos calcular D.
+
+\begin{equation}
+    I_{oo'} = \frac{D}{4\pi^2}T^2
+    \label{eq1.9} 
+\end{equation}
+
+Para recolher essas dados foram presas as massas $m_1 e m_2$ de forma que a distância de uma para a outra seja de $d_t$ e a meia distância entre elas se encontre o eixo de rotação.
+
+Além dessa configuração também foram pesadas as massas , a vareta e medido o comprimento da vareta, tab.\ref{tab1}. Massas e vareta pesadas na balança de marca METTLER modelo PJ400.
+
+\begin{table}[ht]
+    \centering
+    \includegraphics[width=0.35\linewidth]{tab1.png}
+    \caption{tabela obtida em laboratório}
+    \label{tab1}
+\end{table}
+
+Ao girar a vareta em um ângulo de 90\degree foi medido período de oscilação no sentido direto (anti-horário ) e inverso (horário), foi tomado o valor médio para o valor do período ( as incertezas foram desprezadas pois são irrelevantes na análise ). Com os valores medido e com ajuda da E.q\ref{eq1.10} foi preenchida a tabela tab.\ref{tab2}.
+
+\begin{equation}
+    I' = m_1 d_1^2 + m_2 d_2^2 + m_{\text{vareta}} \left(\frac{L^2}{12}\right)
+    \label{eq1.10} 
+\end{equation}
+
+\begin{table}[ht]
+    \centering
+    \includegraphics[width=0.5\linewidth]{tab2.png}
+    \caption{tabela obtida em laboratório}
+    \label{tab2}
+\end{table}
+
+Na tab.\ref{tab2} I' foi calculado por meio fórmula Eq.\ref{eq1.10} já I, é um ajuste linear da Eq.\ref{eq1.9} . suas matriz é mostrada no tópido de análise.
+
+\subsubsection{cálculo do teorema de Steiner}
+
+Definido uma distância $d_t$ e variando o eixo de simetria das massas , como mostra a fig.\ref{fig2}, é preenchida a tab.\ref{tab3}.
+
+\begin{table}[ht]
+    \centering
+    \includegraphics[width=0.50\linewidth]{tab3.png}
+    \caption{tabela obtida em laboratório}
+    \label{tab3}
+\end{table}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.50\linewidth]{esquema 2.png}
+    \caption{Protocolo T5A UP}
+    \label{fig2}
+\end{figure}
+
+Com essa nova geometria para preencher a \ref{tab3} basta mais uma vez medir os períodos de oscilações.
+
+Tendo essas valores de oscilações obtidos é calculado $I_z$ pela fórmula Eq.\ref{eq1.9}, uma vez que D já é conhecido pela análise gráfica do tópico 2.1.2 . Na coluna seguinte da tab.\ref{tab3}, foi calculado o valor previsto de I pelo teorema de Steiner , Eq.\ref{eq1.1} e por fim, foi calculado a diferença absoluta entra os valores obtidos $ |I_z - I_z'|$ e a diferença relativa $|I_z - I_z'|/I_Z$.
+
+\subsubsection{calculando o momento de inércia de outros sólidos}
+
+Agora o objetivo é calcular o momento de inércia de diferentes sólidos cuja fórmula de calculo teórico é resumida na fig\ref{fig8} e comparar com os valores obtidos experimentalmente.
+
+Nesse momento foi retira a vareta e fixado o sólido diretamente na base do suporte da mola , como mostra a fig\ref{fig3}.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.50\linewidth]{fig3.png}
+    \caption{foto do relatório UP T5A}
+    \label{fig3}
+\end{figure}
+
+Com o mesmo procedimento já mencionado foi preenchida a tabela tab.4
+e a tab.5.
+
+\begin{table}[!h]
+\begin{minipage}{0.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{tab4.png}\label{tab4}
+  \caption{tabela obtida em laboratório}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{tab4.png}\label{tab5}
+  \caption{tabela obtida em laboratório}
+\end{minipage}
+\end{table}
+
+Foram calculado as imagens para os casos do cilindro oco e do cilindro maciço  mostrados na fig.\ref{fig4}.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.5\linewidth]{fig4.png}
+    \caption{foto tirada por mim em laboratório}
+    \label{fig4}
+\end{figure}
+
+\subsection{Resultados e Análise Experimental}
+
+Para se feita a análise foram feitas algumas considerações : as massas $m_1 
+$ e $ m_2$ são pontuais , foram desprezadas o momento da força aplicada na 
+vareta, e considerado o movimento da mola como não amortecido. Essas 
+considerações geram erros maiores do que propriamente os erros associados as 
+medidas por isso não foi feita uma análise formal dos erros. Isso não é 
+verdade para o calculo do momento de outros sólidos uma vez que não se tem a 
+vareta nem queremos considerar com uma massa pontual.
+
+
+\subsection{Análise tab.\ref{tab2}}
+
+O primeiro passo e mais importante
+dessa análise é o cálculo da
+constante D , para isso foi traçado
+o gráfico de $I'$ em função de $T^2$,
+calculada sua matriz de ajuste,
+traçado o devido ajuste linear e com
+base Eq.\ref{eq1.9} foi calculado $D
+= (02525 \pm 0,00004) Kg m^2 s^{-2}$
+com um erro de $\approx 2\% 
+$.gráfico e matriz representados em
+fig.\ref{fig5})
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.35\linewidth]{fig5.png}
+    \caption{gráfico feito em laboratório}
+    \label{fig5}
+\end{figure}
+
+Com finalidade de estudar qual gama experimental possui um erro menor foi traçado o gráfico  da diferença relativa entres os valores medidos e teóricos $|I - I'|/I'$ em função de $d_t^2$, fig\ref{fig6}.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.35\linewidth]{fig6.png}
+    \caption{gráfico feito em laboratório}
+    \label{fig6}
+\end{figure}
+
+Analisando ele é possível perceber que a diferença diminui de acordo com o aumento de $d_t$, isso é o esperado uma vez que com o aumento da distancia o comprimento da massa vai se tornando cada vez menos relevante assim a consideração de que são massas pontuais fica mais precisa.
+
+
+\subsection{Análise tab.\ref{tab3}}
+
+Agora com o valor de $D$ sabido e com a nova configuração fig.\ref{fig2} podemos testar o teorema de Steiner \ref{eq1.1}. Para isso foi traçado o gráfico da diferença absoluta entre o momento medido e o momento previsto pelo teorema de Steiner $|I_z - I_z'|$ em função da distância ao quadrado entre o eixo de simetria e de rotação ($d^2$). pode ser visto em fig.\ref{fig7}.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.35\linewidth]{fig7.png}
+    \caption{gráfico feito em laboratório}
+    \label{fig7}
+\end{figure}
+
+Com esse gráfico podemos ver que a gama experimentar mais eficiente para se utilizar o teoremas de Steiner são para valores de $d$ pequenos, isso é coerente pois, quando menor a diferença entre o eixo de simetria e o eixo de rotação menor também será o momento da força aplicada na vareta.
+
+Com a análise gráficas fica claro que as considerações de massas pontuais e de que não existe momento de força na vareta são importantes na gama escolhida uma vez que são , pelos gráficos, visivelmente mais relevantes que os erros relacionado a precisão dos aparelhos de medidas
+.
+\subsection{Análise tab.4 e 5}
+
+Para o calculo do momento dos sólidos foi utilizada a tabela que se encontra em anexos fig.\ref{fig8}. Como esperado o calculo dos sólidos obtiveram erros menos uma vez que não é necessário fazer as considerações sobre a vareta nem que as massas são pontuais.O valor obtido para o cilindro oco foi de $(8,75 \pm 0,04)10^{-4} kgm^2$, o que da um desvio de $\approx 3\%$ .
+
+Para o cilindro maciço foi de $(4.6 \pm 0,05) 10^{-4} K gm^2$ e o desvio foi de $\approx 1.3\%$  do valor teórico .
+
+
+\section{conclusão}
+\begin{itemize}
+
+\item Os momentos de inércia foram bem determinados com os devidos erros bem justificados e analisado devidos as condições do experimento, além disso foi possível possível analisar graficamente em quais gamas experimentais o estudo é mais preciso.
+
+\item D foi bem determinado com incerteza baixa e o atende as expectativas gráficas.
+
+\item O teorema de Steiner foi verificado e explicado em quais gamas ele foi mais preciso.
+
+\item No estudo dos momentos de inércia dos sólidos foi possível calcular os valores do momento de inércia com erros percentuais baixos.
+
+\item O estudo foi bem sucedido e atende com as expectativas considerando as condições de massas pontuais, de momento de força , alinhamento e movimento amortecido.
+
+\end{itemize}
+
+
+\section{anexos}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.35\linewidth]{fig8.png}
+    \caption{Imagem relatório T5A\cite{ref1}}
+    \label{fig8}
+\end{figure}
+
+
+\bibliographystyle{abbrv}
+\bibliography{referencia}
+\end{document}
+
